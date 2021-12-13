@@ -1,5 +1,7 @@
+import { useState, useEffect } from 'react';
 import { merge } from 'lodash';
 import ReactApexChart from 'react-apexcharts';
+import Cookies from 'js-cookie';
 // material
 import { useTheme, styled } from '@material-ui/core/styles';
 import { Card, CardHeader } from '@material-ui/core';
@@ -7,10 +9,10 @@ import { Card, CardHeader } from '@material-ui/core';
 import { fNumber } from '../../../utils/formatNumber';
 //
 import { BaseOptionChart } from '../../charts';
-
+import statisticsApi from '../../../api/statistics';
 // ----------------------------------------------------------------------
 
-const CHART_HEIGHT = 372;
+const CHART_HEIGHT = 395;
 const LEGEND_HEIGHT = 72;
 
 const ChartWrapperStyle = styled('div')(({ theme }) => ({
@@ -31,23 +33,44 @@ const ChartWrapperStyle = styled('div')(({ theme }) => ({
 
 // ----------------------------------------------------------------------
 
-const CHART_DATA = [4344, 5435, 1443, 4443];
-
 export default function AppCurrentVisits() {
   const theme = useTheme();
 
+  const [CHART_DATA, setChartData] = useState([]);
+  const token = Cookies.get('tokenUser');
+  useEffect(() => {
+    async function getDataPieChart() {
+      statisticsApi
+        .getDataPieChart(token)
+        .then((response) => {
+          console.log(response.data);
+          const arr = [];
+          response.data.forEach((data) => {
+            arr.push(data.totalOrders);
+          });
+          setChartData(arr);
+        })
+        .catch((erorr) => {
+          if (erorr.response) {
+            console.log('get data failed', erorr.response);
+          }
+        });
+    }
+    getDataPieChart();
+  }, []);
   const chartOptions = merge(BaseOptionChart(), {
     colors: [
-      theme.palette.primary.main,
-      theme.palette.info.main,
-      theme.palette.warning.main,
-      theme.palette.error.main
+      // theme.palette.primary.main,
+      // theme.palette.info.main
+      theme.palette.error.main,
+      theme.palette.warning.main
     ],
-    labels: ['America', 'Asia', 'Europe', 'Africa'],
+    labels: ['Online', 'Direct'],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { floating: true, horizontalAlign: 'center' },
     dataLabels: { enabled: true, dropShadow: { enabled: false } },
     tooltip: {
+      shared: true,
       fillSeriesColor: false,
       y: {
         formatter: (seriesName) => fNumber(seriesName),
@@ -63,7 +86,7 @@ export default function AppCurrentVisits() {
 
   return (
     <Card>
-      <CardHeader title="Current Visits" />
+      <CardHeader title="Order Payment Rate" />
       <ChartWrapperStyle dir="ltr">
         <ReactApexChart type="pie" series={CHART_DATA} options={chartOptions} height={280} />
       </ChartWrapperStyle>

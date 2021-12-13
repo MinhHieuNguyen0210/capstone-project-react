@@ -78,9 +78,9 @@ export default function BaseOptionChart() {
 
     // Chart
     chart: {
-      toolbar: { show: false },
+      toolbar: { show: true },
       zoom: { enabled: false },
-      // animations: { enabled: false },
+      animations: { enabled: true },
       foreColor: theme.palette.text.disabled,
       fontFamily: theme.typography.fontFamily
     },
@@ -114,7 +114,7 @@ export default function BaseOptionChart() {
     },
 
     // Datalabels
-    dataLabels: { enabled: false },
+    dataLabels: { enabled: true },
 
     // Stroke
     stroke: {
@@ -144,7 +144,7 @@ export default function BaseOptionChart() {
     // Tooltip
     tooltip: {
       x: {
-        show: false
+        show: true
       }
     },
 

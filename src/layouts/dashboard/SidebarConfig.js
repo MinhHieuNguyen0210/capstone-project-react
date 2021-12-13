@@ -19,9 +19,14 @@ const sidebarConfig = [
     icon: getIcon(pieChart2Fill)
   },
   {
-    title: 'Food',
-    path: '/dashboard/food',
-    icon: getIcon(cubeFill)
+    title: 'Account',
+    path: '/dashboard/account',
+    icon: getIcon(peopleFill)
+  },
+  {
+    title: 'Products',
+    path: '/dashboard/products',
+    icon: getIcon(shoppingBagFill)
   },
   {
     title: 'Categories',
@@ -37,32 +42,32 @@ const sidebarConfig = [
     title: 'Revenue',
     path: '/dashboard/revenue',
     icon: getIcon(cubeFill)
-  },
-  {
-    title: 'product',
-    path: '/dashboard/products',
-    icon: getIcon(shoppingBagFill)
-  },
+  }
+  // {
+  //   title: 'product',
+  //   path: '/dashboard/products',
+  //   icon: getIcon(shoppingBagFill)
+  // },
   // {
   //   title: 'blog',
   //   path: '/dashboard/blog',
   //   icon: getIcon(fileTextFill)
   // },
-  {
-    title: 'login',
-    path: '/login',
-    icon: getIcon(lockFill)
-  },
-  {
-    title: 'register',
-    path: '/register',
-    icon: getIcon(personAddFill)
-  },
-  {
-    title: 'Not found',
-    path: '/404',
-    icon: getIcon(alertTriangleFill)
-  }
+  // {
+  //   title: 'login',
+  //   path: '/login',
+  //   icon: getIcon(lockFill)
+  // },
+  // {
+  //   title: 'register',
+  //   path: '/register',
+  //   icon: getIcon(personAddFill)
+  // },
+  // {
+  //   title: 'Not found',
+  //   path: '/404',
+  //   icon: getIcon(alertTriangleFill)
+  // }
 ];
 
 export default sidebarConfig;

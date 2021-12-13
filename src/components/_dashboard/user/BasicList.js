@@ -11,11 +11,7 @@ import ArrowForwardIosIcon from '@mui/icons-material/ArrowForwardIos';
 import ListSubheader from '@mui/material/ListSubheader';
 
 const useStyles = makeStyles({
-  modifyList: {
-    position: 'relative',
-    top: '-634px',
-    width: '218px'
-  }
+  modifyList: {}
 });
 export default function BasicList() {
   const classes = useStyles();
@@ -28,14 +24,14 @@ export default function BasicList() {
         p: 2,
         border: '1px solid #F3F5F7',
         borderRadius: '5px',
-        position: 'relative',
-        top: '-640px',
+        position: 'fixed',
+        top: '292px',
         padding: 0
       }}
     >
       <List>
         <ListSubheader component="div" id="nested-list-subheader">
-          Nested List Items
+          Categories List
         </ListSubheader>
         <ListItem disablePadding>
           <ListItemButton>
@@ -52,12 +48,12 @@ export default function BasicList() {
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="ArrowForwardIos" />
+            <ListItemText primary="Rice" />
           </ListItemButton>
         </ListItem>
         <ListItem disablePadding>
           <ListItemButton>
-            <ListItemText primary="ArrowForwardIos" />
+            <ListItemText primary="Noodle" />
           </ListItemButton>
         </ListItem>
       </List>

@@ -59,13 +59,8 @@ export default function AppCurrentVisits() {
     getDataPieChart();
   }, []);
   const chartOptions = merge(BaseOptionChart(), {
-    colors: [
-      // theme.palette.primary.main,
-      // theme.palette.info.main
-      theme.palette.error.main,
-      theme.palette.warning.main
-    ],
-    labels: ['Online', 'Direct'],
+    colors: [theme.palette.info.main, theme.palette.error.main],
+    labels: ['Direct', 'Online'],
     stroke: { colors: [theme.palette.background.paper] },
     legend: { floating: true, horizontalAlign: 'center' },
     dataLabels: { enabled: true, dropShadow: { enabled: false } },

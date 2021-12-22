@@ -509,7 +509,7 @@ function Products() {
                               <Typography
                                 style={{
                                   textTransform: 'capitalize',
-                                  width: '110px'
+                                  width: '160px'
                                 }}
                                 variant="body1"
                                 noWrap

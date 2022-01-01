@@ -17,6 +17,11 @@ import {
   Typography,
   Box
 } from '@material-ui/core'; // components
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
 import SearchIcon from '@mui/icons-material/Search';
 import IconButton from '@mui/material/IconButton';
 import InputBase from '@mui/material/InputBase';
@@ -32,7 +37,7 @@ import EditIcon from '@mui/icons-material/Edit';
 import DeleteIcon from '@mui/icons-material/Delete';
 import Cookies from 'js-cookie';
 import { filter } from 'lodash';
-import { useEffect, useState } from 'react';
+import { useEffect, useState, useRef } from 'react';
 import { Link as RouterLink } from 'react-router-dom';
 import categoriesApi from '../api/categoriesApi'; //
 import Page from '../components/Page';
@@ -123,6 +128,8 @@ function Categories() {
   const [rowsPerPage, setRowsPerPage] = useState(5);
   const [openAddForm, setOpenAddForm] = useState(false);
   const [categoriesAction, setCategoriestAction] = useState(false);
+  const [openDialog, setOpenDialog] = useState(false);
+  const refIsDelete = useRef(false);
   const [value, setValue] = useState('');
   const token = Cookies.get('tokenUser');
 
@@ -211,13 +218,18 @@ function Categories() {
     setOpenFailed(false);
   };
 
+  const [idDel, setIdDel] = useState();
   const handleClickDelete = (id) => {
-    console.log(id);
+    setOpenDialog(true);
+    setIdDel(id);
+  };
+  const handleClickOK = async () => {
+    setOpenDialog(false);
     const obj = {
       isDeleted: true
     };
-    categoriesApi
-      .update(obj, id)
+    await categoriesApi
+      .update(obj, idDel)
       .then((response) => {
         console.log('Delete success !');
         setOpenSuccess(true);
@@ -230,14 +242,14 @@ function Categories() {
           setOpenFailed(false);
         }
       });
+    refIsDelete.current = false;
+    // if (open === 'success') {
+    //   setOpenSuccess(true);
+    // }
 
-    if (open === 'success') {
-      setOpenSuccess(true);
-    }
-
-    if (open === 'error') {
-      setOpenFailed(true);
-    }
+    // if (open === 'error') {
+    //   setOpenFailed(true);
+    // }
   };
   const formatIsoStringToDate = (data) => {
     const date = new Date(data);
@@ -260,6 +272,9 @@ function Categories() {
 
   const handleUpdateListCategories = () => {
     setCategoriestAction(!categoriesAction);
+  };
+  const handleCloseDialog = () => {
+    setOpenDialog(false);
   };
 
   const handleClickSearch = () => {
@@ -534,6 +549,16 @@ function Categories() {
             Something went wrong !
           </MuiAlert>
         </Snackbar>
+        <Dialog open={openDialog} onClose={handleCloseDialog}>
+          <DialogTitle>Are you sure ?</DialogTitle>
+          <DialogContent>
+            <DialogContentText>This will delete product data .</DialogContentText>
+          </DialogContent>
+          <DialogActions>
+            <Button onClick={handleCloseDialog}>Cancel</Button>
+            <Button onClick={handleClickOK}>OK</Button>
+          </DialogActions>
+        </Dialog>
       </Stack>
     </>
   );

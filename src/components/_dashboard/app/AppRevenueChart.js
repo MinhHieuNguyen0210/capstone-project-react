@@ -116,7 +116,7 @@ function AppRevenueChart() {
       >
         Filter
       </Button>
-      <CardHeader title="Revenue 2021" subheader="Unit: Million VNĐ" />
+      <CardHeader title="Revenue 2021" subheader="Unit: VNĐ" />
       <Box
         sx={{
           p: 3,

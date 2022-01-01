@@ -193,7 +193,7 @@ const CategoriesAdd = (props) => {
               color="primary"
               style={{ width: '100%', margin: '10px auto' }}
             >
-              Add food
+              Submit
             </Button>
           </FormControl>
         </FormGroup>

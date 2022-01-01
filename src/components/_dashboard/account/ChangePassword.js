@@ -46,6 +46,8 @@ const ChangePassword = (props) => {
 
   const [openFailed, setOpenFailed] = useState(false);
 
+  const [checkMatchPassword, setCheckMatchPassword] = useState(false);
+
   const handleCloseSuccess = () => {
     setOpenSuccess(false);
   };
@@ -81,6 +83,9 @@ const ChangePassword = (props) => {
             setOpenFailed(true);
           }
         });
+    } else {
+      console.log('dont match');
+      setCheckMatchPassword(true);
     }
   };
   return (
@@ -150,6 +155,12 @@ const ChangePassword = (props) => {
         <Snackbar open={openFailed} autoHideDuration={6000} onClose={handleCloseFailed}>
           <MuiAlert onClose={handleCloseFailed} severity="error" sx={{ width: '100%' }}>
             Something went wrong !
+          </MuiAlert>
+        </Snackbar>
+
+        <Snackbar open={checkMatchPassword} autoHideDuration={6000} onClose={handleCloseFailed}>
+          <MuiAlert onClose={handleCloseFailed} severity="error" sx={{ width: '100%' }}>
+            The repeat password must match with new password !
           </MuiAlert>
         </Snackbar>
       </Stack>

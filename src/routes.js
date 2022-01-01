@@ -32,7 +32,7 @@ export default function Router() {
         // { path: 'products', element: <ProductSample /> },
         { path: 'blog', element: <Blog /> },
         { path: 'addFood', element: <UserAdd /> },
-        { path: 'revenue', element: <Revenue /> },
+        // { path: 'revenue', element: <Revenue /> },
         { path: 'account', element: <Account /> }
       ]
     },

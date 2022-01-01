@@ -37,12 +37,12 @@ const sidebarConfig = [
     title: 'Order',
     path: '/dashboard/order',
     icon: getIcon(cubeFill)
-  },
-  {
-    title: 'Revenue',
-    path: '/dashboard/revenue',
-    icon: getIcon(cubeFill)
   }
+  // {
+  //   title: 'Revenue',
+  //   path: '/dashboard/revenue',
+  //   icon: getIcon(cubeFill)
+  // }
   // {
   //   title: 'product',
   //   path: '/dashboard/products',

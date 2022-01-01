@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/css/main.65558bb9.chunk.css",
+    "main.js": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/main.29d01e60.chunk.js",
+    "main.js.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/main.29d01e60.chunk.js.map",
+    "runtime-main.js": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/runtime-main.e02ce55c.js",
+    "runtime-main.js.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/runtime-main.e02ce55c.js.map",
+    "static/css/2.e379978d.chunk.css": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/css/2.e379978d.chunk.css",
+    "static/js/2.1b8fb392.chunk.js": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/2.1b8fb392.chunk.js",
+    "static/js/2.1b8fb392.chunk.js.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/2.1b8fb392.chunk.js.map",
+    "static/js/3.27e5f0c7.chunk.js": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/3.27e5f0c7.chunk.js",
+    "static/js/3.27e5f0c7.chunk.js.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/3.27e5f0c7.chunk.js.map",
+    "index.html": "/MinhHieuNguyen0210.github.io/capstone-project-react/index.html",
+    "static/css/2.e379978d.chunk.css.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/css/2.e379978d.chunk.css.map",
+    "static/css/main.65558bb9.chunk.css.map": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/css/main.65558bb9.chunk.css.map",
+    "static/js/2.1b8fb392.chunk.js.LICENSE.txt": "/MinhHieuNguyen0210.github.io/capstone-project-react/static/js/2.1b8fb392.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.e02ce55c.js",
+    "static/css/2.e379978d.chunk.css",
+    "static/js/2.1b8fb392.chunk.js",
+    "static/css/main.65558bb9.chunk.css",
+    "static/js/main.29d01e60.chunk.js"
+  ]
+}
